@@ -1,0 +1,65 @@
+<div class="container">
+    <table class="table" style="width: 500px;">
+        <tr>
+            <td>
+                <label>Conference ID</label>
+            </td>
+            <td>
+                <input type="number" [(ngModel)]="conferenceId" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{ errMsg }}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isConferenceExist">
+        <tr>
+            <td>Conference ID</td>
+            <td>
+                <input type="number" [(ngModel)]="conference.conferenceID" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" [(ngModel)]="conference.title" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <input type="text" [(ngModel)]="conference.description" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>
+                <input type="date" [(ngModel)]="conference.date" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>
+                <input type="text" [(ngModel)]="conference.location" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>User ID</td>
+            <td>
+                <input type="number" [(ngModel)]="conference.userId" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="updateConference()">Update</button>
+                <button class="btn btn-primary" (click)="delete()">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
